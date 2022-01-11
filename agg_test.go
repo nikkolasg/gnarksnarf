@@ -37,5 +37,6 @@ func NewTestCircuit(nbConstraints int) *Circuit {
 
 func TestCircuitGroth16(t *testing.T) {
 	assert := test.NewAssert(t)
-	assert.ProverSucceeded(&Circuit{}, NewTestCircuit(3))
+	c := 4
+	assert.ProverSucceeded(&Circuit{nbConstraints: c}, NewTestCircuit(c))
 }
